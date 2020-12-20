@@ -14,7 +14,7 @@ export class ShoppingService {
     constructor(private http: HttpClient) {}
 
     getAllItems(): Observable<any> {
-        return this.http.get(this.SHOPPING_URL).pipe(delay(500));
+        return this.http.get<ShoppingItem[]>(this.SHOPPING_URL).pipe(delay(500));
     }
 
     addItem(shoppingItem: ShoppingItem): Observable<any> {
